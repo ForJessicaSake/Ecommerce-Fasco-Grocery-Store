@@ -6,6 +6,8 @@ export default {
       colors: {
         primary: "#32d281",
         secondary: "#313742",
+        blueShade: "#d9f2f9",
+
       },
       fontFamily: {
         quicksand: ["Quicksand", "sans-serif"],

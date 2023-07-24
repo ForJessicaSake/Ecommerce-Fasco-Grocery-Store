@@ -7,7 +7,7 @@ type Props = {
 };
 const Button = ({ className, children, disabled }: Props) => {
   return (
-    <button className={`bg-primary text-white lg:max-w-sm max-w-[150px] py-2 rounded-md  ${className}`} disabled={disabled}>
+    <button className={`bg-primary text-white rounded-md  ${className}`} disabled={disabled}>
       {children}
     </button>
   );

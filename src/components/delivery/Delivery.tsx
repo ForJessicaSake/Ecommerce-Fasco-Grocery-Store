@@ -11,7 +11,7 @@ const Delivery = () => {
             Stay home & get your daily needs from our shop
           </h1>
           <p className="py-4">Start You'r Daily Shopping with Fesco</p> 
-          <Button className="my-2 w-[384px] py-3">Check out Now</Button>
+          <Button className="my-2 p-3">Check out Now</Button>
         </div>
         <div>
           <img
