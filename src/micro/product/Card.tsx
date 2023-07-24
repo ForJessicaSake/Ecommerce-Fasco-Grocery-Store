@@ -2,7 +2,7 @@ import Button from "../button/Button";
 
 const Card = () => {
   return (
-    <div className="rounded-lg shadow-md h-96 max-w-full lg:max-w-[300px] p-5">
+    <div className="rounded-lg shadow-md h-96 max-w-full lg:max-w-[350px] p-5">
       <img src="" alt="fruit" className="" />
       <div className="space-y-3">
         <p className="font-light">Category</p>
