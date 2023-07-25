@@ -1,5 +1,5 @@
 import Button from "../button/Button";
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const Card = () => {
   return (
     <div className="rounded-lg shadow-md h-96 max-w-full lg:max-w-[350px] p-5">
@@ -12,7 +12,9 @@ const Card = () => {
 
         <div className="py-3 flex justify-between">
           <p>$price</p>
-          <Button>cart icon Add</Button>
+          <Button className="my-5 flex items-center p-2 rounded-md justify-center">
+            <AiOutlineShoppingCart className="mr-2" /> Add
+          </Button>
         </div>
       </div>
     </div>

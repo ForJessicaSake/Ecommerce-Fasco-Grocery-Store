@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { TfiClose } from "react-icons/tfi";
-import Button from "../../micro/button/Button";
+import {
+  AiOutlineShoppingCart,
+  AiOutlineHeart,
+  AiOutlineMail
+} from "react-icons/ai";
+import { BiUser } from "react-icons/bi";
 
 const Navbar = () => {
   const [nav, setNav] = React.useState(false);
@@ -11,22 +16,33 @@ const Navbar = () => {
       <div className="justify-between items-center hidden lg:flex">
         <div className="flex items-center  justify-between">
           <Link to="/" className="text-3xl font-bold text-secondary">
-            Fasco
+            Fa<span className="text-primary">s</span>co
           </Link>
         </div>
-        <input placeholder="Search..." className="w-80 rounded-md p-2 border" />
-        <ul className="flex items-center justify-between space-x-14 text-gray-600 cursor-pointer">
+        <input
+          placeholder="Search here for all kinds of fruits..."
+          className="w-80 rounded-md placeholder:text-sm shadow-md border-gray-100 p-2 border"
+        />
+        <ul className="flex items-center justify-between space-x-10 text-gray-600 cursor-pointer">
           <li>
-            <a href="/#features">Cart</a>
+            <a href="/#features" className="flex items-center">
+              <AiOutlineShoppingCart className="mr-2" /> Cart
+            </a>
           </li>
           <li>
-            <a href="/#testimonials">Wishlist</a>
+            <a href="/#testimonials" className="flex items-center">
+              <AiOutlineHeart className="mr-2" /> Wishlist
+            </a>
           </li>
           <li>
-            <a href="/#pricing">Account</a>
+            <a href="/#pricing" className="flex items-center">
+              <BiUser className="mr-2" /> Account
+            </a>
           </li>
           <li>
-            <a href="/#contact">Contact</a>
+            <a href="/#contact" className="flex items-center">
+              <AiOutlineMail className="mr-2" /> Contact
+            </a>
           </li>
         </ul>
       </div>
@@ -34,7 +50,7 @@ const Navbar = () => {
       {/* mobile */}
       <div className="lg:hidden flex justify-between items-center">
         <Link to="/" className="text-3xl font-bold text-secondary">
-          Fasco
+          Fa<span className="text-primary">s</span>co
         </Link>
         <ul
           onClick={() => setNav(!nav)}

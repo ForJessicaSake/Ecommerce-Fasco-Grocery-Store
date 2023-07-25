@@ -1,5 +1,4 @@
 import Card from "../../micro/product/Card";
-
 const Product = () => {
   return (
     <main className="container mx-auto px-5 lg:px-10">
@@ -7,7 +6,7 @@ const Product = () => {
         <h1 className="text-3xl text-secondary font-semibold">
           Popular <span className="text-primary">Product</span>
         </h1>
-        <ul className="flex justify-between cursor-pointer space-x-10 font-medium text-gray-500">
+        <ul className="justify-between md:flex hidden cursor-pointer space-x-10 font-medium text-gray-500">
           <li>All</li>
           <li>Milk</li>
           <li>Pet foods</li>

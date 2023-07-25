@@ -7,7 +7,7 @@ type Props = {
 };
 const Button = ({ className, children, disabled }: Props) => {
   return (
-    <button className={`bg-primary text-white rounded-md  ${className}`} disabled={disabled}>
+    <button className={`bg-primary text-lg font-medium text-white rounded-md  ${className}`} disabled={disabled}>
       {children}
     </button>
   );
