@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
         <input
           placeholder="Search here for all kinds of fruits..."
-          className="w-80 rounded-md placeholder:text-sm shadow-md border-gray-100 p-2 border"
+          className="w-80 rounded-md placeholder:text-sm shadow-md border-gray-100 p-3 border"
         />
         <ul className="flex items-center justify-between space-x-10 text-gray-600 cursor-pointer">
           <li>
