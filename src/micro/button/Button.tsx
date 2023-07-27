@@ -4,10 +4,11 @@ type Props = {
   className?: string;
   children: React.ReactNode | string;
   disabled?: boolean;
+  onClick?:()=>void
 };
-const Button = ({ className, children, disabled }: Props) => {
+const Button = ({ className, children, disabled, onClick }: Props) => {
   return (
-    <button className={`bg-primary text-lg font-medium text-white rounded-md  ${className}`} disabled={disabled}>
+    <button onClick={onClick} className={`bg-primary text-lg font-medium text-white rounded-md  ${className}`} disabled={disabled}>
       {children}
     </button>
   );

@@ -1,10 +1,9 @@
-import React from "react";
 import Button from "../../micro/button/Button";
 import delivery from "../../assets/delivery/delivery.png";
 
 const Delivery = () => {
   return (
-    <main className="mx-auto container bg-[#e1f5fa] py-10">
+    <main className="mx-auto container bg-[#e1f5fa] py-10 my-14 lg:my-20">
       <div className="flex md:flex-row flex-col-reverse md:justify-between justify-center items-center lg:px-10 px-5">
         <div className="pt-8 md:pt-0 flex flex-col items-center md:items-start text-center md:text-start">
           <h1 className="sm:text-4xl text-2xl font-bold sm:max-w-xl max-w-sm">
