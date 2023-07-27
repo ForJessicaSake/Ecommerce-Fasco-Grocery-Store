@@ -17,7 +17,7 @@ const Hero = () => {
           Freshness and Speed at your Fingertips: Get groceries delivered in 30
           Minutes with our website or mobile app.
         </p>
-        <a to="/#product">
+        <a href="/#product">
           <Button className="animate-bounce my-5 flex items-center p-3 w-64  rounded-md justify-center">
             Shop Now <BsArrowRight className="ml-3 text-xl" />
           </Button>
