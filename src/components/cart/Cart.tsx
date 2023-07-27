@@ -71,10 +71,11 @@ const Cart = () => {
   const initializePayment = usePaystackPayment(config);
   const onSuccess = () => {
     toast.success("Payment successfully completed");
-    setModal(true);
+    // setModal(true);
   };
   const onClose = () => {
-    setModal(true);
+    toast.error("Your order was cancelled");
+    // setModal(true);
   };
 
   return (
