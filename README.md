@@ -1,7 +1,7 @@
 # Ecommerce: Fasco Grocery Store 
 
 ## About 
-An ecommerce grocery store built with Zusatand state management library on React. It is a small online store that allows you to order groceries easily on the website.
+An ecommerce grocery store built with Zusatand state management library on React. 
 
 ## Technologies 
 - React.js
