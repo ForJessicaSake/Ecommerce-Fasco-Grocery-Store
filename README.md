@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# Ecommerce: Fasco Grocery Store 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About 
+An ecommerce grocery store built with Zusatand state management library on React. It is a small online store that allows you to order groceries easily on the website.
 
-Currently, two official plugins are available:
+## Technologies 
+- React.js
+- TypeScript
+- Tailwind
+- AOS Libary
+- React-toastify
+- React-icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👋  Meet The Team
+- Jessica Joseph
 
-## Expanding the ESLint configuration
+## Roadmap 🔍
+Here are some of the links you should look out for to make navigation on the site smooth for you. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Home
+- Cart
+- Product 
+- Delivery
 
-- Configure the top-level `parserOptions` property like this:
+<!-- THE PRODUCT LINK -->
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Product 
+Production Website Link: (https://ecommerce.brimble.app/)
