@@ -71,12 +71,14 @@ const Cart = () => {
   const initializePayment = usePaystackPayment(config);
   const onSuccess = () => {
     toast.success("Payment successfully completed");
-    // setModal(true);
   };
   const onClose = () => {
     toast.error("Your order was cancelled");
-    // setModal(true);
   };
+
+  React.useEffect(() => {
+    setCart(cartArray);
+  }, [cartArray]);
 
   return (
     <main className="mx-auto container px-5 lg:px-10 pt-12 lg:pt-20">
@@ -88,11 +90,11 @@ const Cart = () => {
           <p className="text-lg">
             Go to shop and add to cart product you'd like to buy.
           </p>
-          <Link to="/">
+          <a href="/#product">
             <Button className="animate-verticalBounce flex items-center p-3">
               <BiArrowBack className="mr-2" /> Return to Shop
             </Button>
-          </Link>
+          </a>
         </div>
       ) : (
         <>
@@ -121,7 +123,7 @@ const Cart = () => {
                   <hr />
                 </thead>
                 <tbody className="">
-                  {cartArray.map((item) => (
+                  {cart.map((item) => (
                     <tr
                       key={item.id}
                       className=" border-b flex justify-between items-center py-5"
