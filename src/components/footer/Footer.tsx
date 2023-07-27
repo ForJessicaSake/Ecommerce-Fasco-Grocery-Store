@@ -11,7 +11,7 @@ import { LuAlarmClock } from "react-icons/lu";
 
 const Footer = () => {
   return (
-    <footer className="lg:flex lg:justify-between grid grid-cols-1 sm:grid-cols-2 py-14 lg:py-20 gap-y-10 lg:gap-y-0 lg:px-10 px-5 mx-auto container">
+    <footer className="lg:flex pb-4 lg:justify-between grid grid-cols-1 sm:grid-cols-2 gap-y-10 lg:gap-y-0 lg:px-10 px-5 mx-auto container">
       <div>
         <h1 className="text-3xl text-secondary font-bold">
           Fa<span className="text-primary">s</span>co

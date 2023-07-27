@@ -12,6 +12,16 @@ export default {
       fontFamily: {
         quicksand: ["Quicksand", "sans-serif"],
       },
+      keyframes: {
+        verticalBounce: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(6px)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        verticalBounce: 'verticalBounce 1s ease-in-out infinite',
+      }
     },
   },
   plugins: [],

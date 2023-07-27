@@ -7,13 +7,14 @@ import {
   AiOutlineHeart,
   AiOutlineMail,
 } from "react-icons/ai";
+import { MdOutlineDeliveryDining } from "react-icons/md";
 import { BiUser } from "react-icons/bi";
 import Store from "../../store/Store";
 
 const Navbar = () => {
   const [nav, setNav] = React.useState(false);
   const { cartArray } = Store();
-  console.log(cartArray.length)
+  console.log(cartArray.length);
   return (
     <nav className="mx-auto container px-5 lg:px-10 py-5 z-50">
       <div className="justify-between items-center hidden lg:flex">
@@ -24,13 +25,22 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center justify-between space-x-10 text-gray-600 cursor-pointer">
           <li>
-            <a href="/#features" className="flex items-center">
-              <AiOutlineShoppingCart className="text-xl"/><span className="relative right-2 bottom-2 bg-primary h-4 w-4 text-white flex items-center justify-center text-xs rounded-full">{cartArray.length}</span>Cart
+            <a href="/cart" className="flex items-center">
+              <AiOutlineShoppingCart className="text-xl" />
+              <span className="relative right-2 bottom-2 bg-primary h-4 w-4 text-white flex items-center justify-center text-xs rounded-full">
+                {cartArray.length}
+              </span>
+              Cart
             </a>
           </li>
           <li>
-            <a href="/#testimonials" className="flex items-center">
-              <AiOutlineHeart className="mr-2" /> Wishlist
+            <a href="/#product" className="flex items-center">
+              <AiOutlineHeart className="mr-2" /> Products
+            </a>
+          </li>
+          <li>
+            <a href="/#pricing" className="flex items-center">
+              <MdOutlineDeliveryDining className="mr-2" /> Delivery
             </a>
           </li>
           <li>
@@ -53,7 +63,7 @@ const Navbar = () => {
         </Link>
         <ul
           onClick={() => setNav(!nav)}
-          className={`absolute top-16 z-20 bg-primary items-center w-full left-0 py-10 text-secondary h-full ${
+          className={`absolute top-[74px] z-20 bg-blueShade items-center w-full left-0 py-10 text-secondary h-full ${
             nav ? "block" : "hidden"
           }`}
         >
@@ -62,20 +72,21 @@ const Navbar = () => {
               <a href="/#pricing">Team</a>
             </li>
             <li>
-              <a href="/#pricing">Products</a>
+              <a href="/#product">Products</a>
             </li>
+
             <li>
               <a href="/#contact">Contact</a>
             </li>
 
-            <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full">
-              <a href="/#features" className="flex items-center">
-                <AiOutlineHeart className="mr-2" /> Wishlist
+            <li className="cursor-pointer bg-black text-white p-2 w-32 flex items-center justify-center rounded-full">
+              <a href="/cart" className="flex items-center">
+                <AiOutlineShoppingCart className="mr-2" /> Cart
               </a>
             </li>
-            <li className="cursor-pointer bg-black text-white p-2 w-32 flex items-center justify-center rounded-full">
+            <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full">
               <a href="/#features" className="flex items-center">
-                <AiOutlineShoppingCart className="mr-2" /> Cart
+                <MdOutlineDeliveryDining className="mr-2" /> Delivery
               </a>
             </li>
           </div>

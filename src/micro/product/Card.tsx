@@ -3,7 +3,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FruitItem } from "../../components/products/Product";
 import { RiStarSFill } from "react-icons/ri";
 import Store from "../../store/Store";
-import React from "react";
 
 const Card = ({ fruits }: { fruits: FruitItem[] }) => {
   const { cartArray, addToCart, removeFromCart } = Store();

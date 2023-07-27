@@ -7,7 +7,7 @@ interface storeState {
   addToCart: (item: {}) => void;
   clearCart: () => void;
   incrementCart: () => void;
-  removeFromCart:(itemId:number)=>void;
+  removeFromCart:(item:number)=>void;
 }
 
 const Store = create<storeState>()(
