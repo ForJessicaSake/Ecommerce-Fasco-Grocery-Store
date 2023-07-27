@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "../button/Button";
 type Props = {
   fruit: string;
   image: string;
 };
+
 const Card = ({ fruit, image }: Props) => {
   return (
     <div className="flex shadow-md max-w-sm p-5 rounded-md">
