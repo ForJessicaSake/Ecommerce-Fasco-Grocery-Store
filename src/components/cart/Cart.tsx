@@ -120,7 +120,7 @@ const Cart = () => {
                   <hr />
                 </thead>
                 <tbody className="">
-                  {cart.map((item) => (
+                  {cartArray.map((item) => (
                     <tr
                       key={item.id}
                       className=" border-b flex justify-between items-center py-5"
