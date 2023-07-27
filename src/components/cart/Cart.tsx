@@ -5,6 +5,8 @@ import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { usePaystackPayment } from "react-paystack";
 import { toast } from "react-toastify";
+import Modal, { ModalContent } from "../../micro/modal/Modal";
+import React from "react";
 
 type PaystackProps = {
   reference: string;
@@ -13,38 +15,67 @@ type PaystackProps = {
   publicKey: any;
 };
 
+type Props = {
+  modal: boolean;
+  setModal: (by: boolean) => void;
+};
 
 const Cart = () => {
+  const [modal, setModal] = React.useState(false);
   const { cartArray, removeFromCart } = Store();
-  const totalPrice = cartArray.reduce(
-    (acc: number, curr) => acc + Number(curr.price),
+  const [cart, setCart] = React.useState(cartArray)
+
+  const handleDecrementQuantity = (itemId: number) => {
+    setCart((prevCart: any) =>
+      prevCart.map((item: any) =>
+        item.id === itemId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  const handleIncrementQuantity = (itemId: number) => {
+    setCart((prevCart: any) =>
+      prevCart.map((item: any) => {
+        console.log(item.id);
+        return item.id === itemId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      })
+    );
+  };
+
+  const totalPrice = cart.reduce(
+    (acc: number, curr) => acc + Number(curr.price * curr.quantity),
     0
   );
 
   const billings = {
     tax: 3.5,
-    shipping: 15,
-    discount: 5,
+    shipping: 10,
+    discount: 5.0,
     total: totalPrice,
   };
 
-  
   const config: PaystackProps = {
     reference: new Date().getTime().toString(),
     email: "Fasco@gmail.com",
-    amount: (Math.round(billings.tax + billings.total + billings.shipping - billings.discount) * 80000),
+    amount:
+      Math.round(
+        billings.tax + billings.total + billings.shipping - billings.discount
+      ) * 80000,
     publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
   };
-  
-  const initializePayment = usePaystackPayment(config);
 
+  const initializePayment = usePaystackPayment(config);
   const onSuccess = () => {
     toast.success("Payment successfully completed");
+    setModal(true);
   };
   const onClose = () => {
-    toast.error("Your payment was unsuccessful, please try again later!");
+    setModal(true);
   };
-  
 
   return (
     <main className="mx-auto container px-5 lg:px-10 pt-12 lg:pt-20">
@@ -68,7 +99,7 @@ const Cart = () => {
             <h1 className="text-5xl font-bold text-secondary">Shopping Cart</h1>
             <p className="py-4 font-medium text-base">
               There are{" "}
-              <span className="font-medium text-primary">
+              <span className="font-semibold text-primary">
                 {cartArray.length} products{" "}
               </span>
               in your cart
@@ -89,7 +120,7 @@ const Cart = () => {
                   <hr />
                 </thead>
                 <tbody className="">
-                  {cartArray.map((item) => (
+                  {cart.map((item) => (
                     <tr
                       key={item.id}
                       className=" border-b flex justify-between items-center py-5"
@@ -100,18 +131,25 @@ const Cart = () => {
                           alt="fruit"
                           className="lg:w-28 lg:h-28 w-16 h-16 rounded-md "
                         />
-                        {/* <div className="pl-2 first-letter:uppercase font-medium text-lg">
-                      {item.fruit}
-                    </div> */}
                       </td>
                       <td className="w-1/4 justify-center items-center text-lg flex">
                         <span className="font-medium">$</span>
                         {item.price}
                       </td>
                       <td className="w-1/4 justify-center flex">
-                        <Button className="h-8 w-8">-</Button>
+                        <Button
+                          className="h-8 w-8"
+                          onClick={() => handleDecrementQuantity(item.id)}
+                        >
+                          -
+                        </Button>
                         <span className="px-2">{item.quantity} </span>
-                        <Button className="h-8 w-8">+</Button>
+                        <Button
+                          className="h-8 w-8"
+                          onClick={() => handleIncrementQuantity(item.id)}
+                        >
+                          +
+                        </Button>
                       </td>
                       <td className="w-1/4 justify-center items-center text-lg flex">
                         <span className="font-medium">$</span>
@@ -182,8 +220,38 @@ const Cart = () => {
           </section>
         </>
       )}
+      <Close modal={modal} setModal={setModal} />
     </main>
   );
 };
 
 export default Cart;
+
+export const Close = ({ modal, setModal }: Props) => {
+  return (
+    <Modal
+      open={modal}
+      onClose={() => setModal(false)}
+      className="bg-btnHoverBlack "
+    >
+      <ModalContent className="mx-3 p-5 md:p-0 rounded-2xl flex flex-col justify-center items-center bg-white w-[1000px] h-[65vh]">
+        <div className="flex items-center flex-col text-center justify-center space-y-5">
+          <h1 className="lg:text-6xl text-4xl sm:text-5xl font-bold text-secondary">
+            Your Order was <span className="text-primary">Canceled</span>
+          </h1>
+          <p className="text-lg font-medium">
+            Return to cart and checkout the selected product you've added.
+          </p>
+          <Link to="/cart">
+            <Button
+              className="animate-verticalBounce flex items-center p-3"
+              onClick={() => setModal(false)}
+            >
+              <BiArrowBack className="mr-2" /> Return to Cart
+            </Button>
+          </Link>
+        </div>
+      </ModalContent>
+    </Modal>
+  );
+};

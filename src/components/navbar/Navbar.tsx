@@ -39,13 +39,8 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="/#pricing" className="flex items-center">
+            <a href="/#delivery" className="flex items-center">
               <MdOutlineDeliveryDining className="mr-2" /> Delivery
-            </a>
-          </li>
-          <li>
-            <a href="/#pricing" className="flex items-center">
-              <BiUser className="mr-2" /> Team
             </a>
           </li>
           <li>
@@ -69,12 +64,11 @@ const Navbar = () => {
         >
           <div className="flex flex-col h-96 text-lg  items-center justify-between">
             <li>
-              <a href="/#pricing">Team</a>
-            </li>
-            <li>
               <a href="/#product">Products</a>
             </li>
-
+            <li>
+              <a href="/#delivery">Delivery</a>
+            </li>
             <li>
               <a href="/#contact">Contact</a>
             </li>
@@ -85,7 +79,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full">
-              <a href="/#features" className="flex items-center">
+              <a href="/#delivery" className="flex items-center">
                 <MdOutlineDeliveryDining className="mr-2" /> Delivery
               </a>
             </li>
