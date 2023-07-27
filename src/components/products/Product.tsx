@@ -4,7 +4,7 @@ import Card from "../../micro/product/Card";
 export type FruitItem = {
   fruit: string;
   category: string;
-  quantity: number,
+  quantity: number;
   price: string;
   image: string;
   id: number;
@@ -122,7 +122,7 @@ const Product = () => {
   return (
     <main className="container mx-auto px-5 lg:px-10" id="product">
       <nav className="flex justify-between">
-        <h1  className="text-3xl text-secondary font-semibold">
+        <h1 className="text-3xl text-secondary font-semibold">
           Popular <span className="text-primary">Product</span>
         </h1>
         <ul className="justify-between md:flex hidden cursor-pointer space-x-10 font-medium text-gray-500">

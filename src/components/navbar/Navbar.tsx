@@ -8,7 +8,6 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { MdOutlineDeliveryDining } from "react-icons/md";
-import { BiUser } from "react-icons/bi";
 import Store from "../../store/Store";
 
 const Navbar = () => {
