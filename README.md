@@ -1,7 +1,7 @@
 # Ecommerce: Fasco Grocery Store 
 
 ## About 
-An ecommerce grocery store built with Zusatand state management library on React. 
+An ecommerce grocery store built with Zustand state management library on React. 
 
 ## Technologies 
 - React.js
