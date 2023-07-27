@@ -3,11 +3,17 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FruitItem } from "../../components/products/Product";
 import { RiStarSFill } from "react-icons/ri";
 import Store from "../../store/Store";
+import React from "react";
 
 const Card = ({ fruits }: { fruits: FruitItem[] }) => {
-  const { cartArray, addToCart } = Store();
-  console.log(cartArray);
-  console.log(cartArray.length)
+  const { cartArray, addToCart, removeFromCart } = Store();
+  const handleAddToCart = (cart: FruitItem) => {
+    const itemExist = cartArray.find((item) => item.id === cart.id);
+    if (!itemExist) {
+      addToCart(cart);
+    }
+  };
+
   return (
     <>
       {fruits.map((fruit: FruitItem) => (
@@ -33,12 +39,22 @@ const Card = ({ fruits }: { fruits: FruitItem[] }) => {
                 <span className="font-semibold">$</span>
                 {fruit.price}.00{" "}
               </p>
-              <Button
-                onClick={() => addToCart(fruit)}
-                className="my-5 flex items-center p-2 rounded-md justify-center"
-              >
-                <AiOutlineShoppingCart className="mr-2" /> Add
-              </Button>
+
+              {!cartArray.find((item) => item.id === fruit.id) ? (
+                <Button
+                  onClick={() => handleAddToCart(fruit)}
+                  className="my-5 flex items-center p-2 rounded-md justify-center"
+                >
+                  <AiOutlineShoppingCart className="mr-2" /> Add
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => removeFromCart(fruit.id)}
+                  className="my-5 flex items-center p-2 rounded-md justify-center"
+                >
+                  <AiOutlineShoppingCart className="mr-2" /> Remove
+                </Button>
+              )}
             </div>
           </div>
         </div>

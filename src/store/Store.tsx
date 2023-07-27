@@ -7,6 +7,7 @@ interface storeState {
   addToCart: (item: {}) => void;
   clearCart: () => void;
   incrementCart: () => void;
+  removeFromCart:(itemId:number)=>void;
 }
 
 const Store = create<storeState>()(
@@ -14,12 +15,15 @@ const Store = create<storeState>()(
     (set) => ({
       cart: 0,
       cartArray: [],
-      addToCart: (item: any) => set((state) => ({ cartArray: [...state.cartArray, item] })),
+      addToCart: (item: {}) => set((state) => ({ cartArray: [...state.cartArray, item] })),
       clearCart: () => set({ cart: 0, cartArray: [] }),
       incrementCart: () => set((state) => ({ cart: state.cart + 1 })),
+      removeFromCart: (itemId: number) =>
+      set((state) => ({
+        cartArray: state.cartArray.filter((item) => item.id !== itemId),
+      })),
     }),
-    { name: "store-state" } 
-  )
+    { name: "store" }  )
 );
 
 export default Store;
