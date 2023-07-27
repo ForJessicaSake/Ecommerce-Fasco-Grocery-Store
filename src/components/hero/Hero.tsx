@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import hero from "../../assets/banner/landing.svg";
 import Button from "../../micro/button/Button";
 import { BsArrowRight } from "react-icons/bs";
@@ -18,11 +17,11 @@ const Hero = () => {
           Freshness and Speed at your Fingertips: Get groceries delivered in 30
           Minutes with our website or mobile app.
         </p>
-        <Link to="/">
+        <a to="/#product">
           <Button className="animate-bounce my-5 flex items-center p-3 w-64  rounded-md justify-center">
             Shop Now <BsArrowRight className="ml-3 text-xl" />
           </Button>
-        </Link>{" "}
+        </a>{" "}
       </div>
       <img
         src={hero}
