@@ -11,9 +11,6 @@ An ecommerce grocery store built with Zustand state management library on React.
 - React-toastify
 - React-icons
 
-## 👋  Meet The Team
-- Jessica Joseph
-
 ## Roadmap 🔍
 Here are some of the links you should look out for to make navigation on the site smooth for you. 
 
